@@ -1,6 +1,6 @@
 {
   "name": "react-google-maps-geotiff-overlay",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Easily overlay geotiff images on top of react google maps ",
   "author": "desmoteo",
   "license": "MIT",
@@ -57,5 +57,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "react-google-maps": "^9.4.5"
+  }
 }
