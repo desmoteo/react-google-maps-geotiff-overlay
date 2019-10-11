@@ -29,3 +29,5 @@ class Example extends Component {
 ## License
 
 MIT © [desmoteo](https://github.com/desmoteo)
+=======
+# react-google-maps-geotiff-overlay
