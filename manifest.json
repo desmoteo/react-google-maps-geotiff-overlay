@@ -1,0 +1,8 @@
+{
+  "short_name": "react-google-maps-geotiff-overlay",
+  "name": "react-google-maps-geotiff-overlay",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
