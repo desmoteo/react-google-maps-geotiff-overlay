@@ -6,6 +6,7 @@ import resolve from 'rollup-plugin-node-resolve'
 import url from 'rollup-plugin-url'
 import svgr from '@svgr/rollup'
 
+
 import pkg from './package.json'
 
 export default {
@@ -31,9 +32,14 @@ export default {
     svgr(),
     babel({
       exclude: 'node_modules/**',
-      plugins: [ 'external-helpers' ]
+      presets: [ '@babel/env' ],
+      runtimeHelpers: true
     }),
     resolve(),
-    commonjs()
+    commonjs({
+	namedExports: {
+    		'react-google-maps': [ 'OverlayView' ]
+	}
+   })
   ]
 }

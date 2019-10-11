@@ -4,17 +4,25 @@
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
+  },
   "dependencies": {
+    "@react-google-maps/api": "^1.7.7",
     "prop-types": "^15.6.2",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-google-maps": "^9.4.5",
+    "react-google-maps-geotiff-overlay": "link:..",
     "react-scripts": "^1.1.4",
-    "react-google-maps-geotiff-overlay": "link:.."
+    "worker-loader": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
