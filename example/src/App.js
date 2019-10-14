@@ -26,6 +26,12 @@ class App extends Component {
 
   }
 
+  shouldComponentUpdate(nextProps, nextState)
+  {
+    const res = nextProps !== this.props || nextState.apiKey !== this.state.apiKey
+    return (res)
+  }
+
   drawMap() {
     if (this.state.apiKey !== null) {
       return (

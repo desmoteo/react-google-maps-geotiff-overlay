@@ -5,19 +5,18 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "eslint": "^6.5.1",
     "gh-pages": "^1.2.0"
   },
   "dependencies": {
     "@react-google-maps/api": "^1.7.7",
     "prop-types": "^15.6.2",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "react-google-maps": "^9.4.5",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "react-google-maps-geotiff-overlay": "link:..",
-    "react-scripts": "^1.1.4",
+    "react-scripts": "^3.2.0",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.88.1",
-    "worker-loader": "^2.0.0"
+    "semantic-ui-react": "^0.88.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,5 +25,17 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
