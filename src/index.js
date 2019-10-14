@@ -20,7 +20,6 @@ export default class GeoTIFFOverlay extends Component {
     this.state = { showOverlay: true, canvasRef: false };
 
     this.setCanvasRef = element => {
-      console.log('outtanalamadonna!', element)
       this.setState()
       this.canvasRef = element;
       this.setState({ canvasRef: false });
@@ -38,7 +37,6 @@ export default class GeoTIFFOverlay extends Component {
 
 
 async setCanvas() {
-  console.log('lollo: ', this.canvasRef)
 
   var canvas = this.canvasRef;
   if (canvas) {
@@ -77,14 +75,11 @@ async setCanvas() {
 
 
 async componentDidUpdate(prevProps) {
-  console.log('prevProps: ', prevProps)
   if (this.props.draw) { }
   await this.setCanvas();
 }
 
 async componentDidMount() {
-  console.log('componentDidMount: ', this)
-
   await this.setCanvas();
 }
 
@@ -103,7 +98,6 @@ render() {
     text
   } = this.props
 
-  console.log('overlayData: ', this.props)
   return (
     <OverlayView
       //position={{ lat: -34.397, lng: 150.644 }}
