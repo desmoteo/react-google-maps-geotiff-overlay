@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-google-maps-geotiff-overlay/precache-manifest.eff537e1f7dc1779aae73e3b5da32677.js"
+  "/react-google-maps-geotiff-overlay/precache-manifest.362b84da9ead17029f85afb57be0105d.js"
 );
 
 self.addEventListener('message', (event) => {
