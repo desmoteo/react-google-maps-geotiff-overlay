@@ -6,7 +6,6 @@ import {
 
 const GeoTIFF = require('geotiff')
 class GeoTIFFOverlay extends Component {
-
   static propTypes = {
     draw: PropTypes.bool,
     overlayData: PropTypes.object,
@@ -101,11 +100,7 @@ class GeoTIFFOverlay extends Component {
   }
 
   drawCanvas() {
-    if (this.props.draw) {
-      return (<canvas style={{ position: 'absolute', height: '100%', width: '100%', opacity: this.props.opacity }} ref={this.setCanvasRef} />)
-    } else {
-      return (null)
-    }
+    return (<canvas style={{ position: 'absolute', height: '100%', width: '100%', opacity: this.props.opacity }} ref={this.setCanvasRef} />)
   }
 
   render() {

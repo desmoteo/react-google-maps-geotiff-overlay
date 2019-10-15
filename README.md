@@ -12,18 +12,54 @@ npm install --save react-google-maps-geotiff-overlay
 
 ## Usage
 
+GeoTIFFOverlay only needs binary image data provided as a prop. 
+
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-google-maps-geotiff-overlay'
+import GeoTIFFOverlay from 'react-google-maps-geotiff-overlay'
+import { GoogleMap, LoadScript } from '@react-google-maps/api'
+
 
 class Example extends Component {
   render () {
     return (
-      <MyComponent />
+          <LoadScript
+            id='script-loader'
+            googleMapsApiKey={...}
+          >
+            <GoogleMap
+              onLoad={map => {
+                this.mapRef = map
+              }}
+              id='example'
+              mapContainerStyle={{
+                height: '768px',
+                width: '100%'
+              }}
+              zoom={4}
+              center={{ lat: 30.397, lng: 10.644 }}
+            >
+              <GeoTIFFOverlay overlayData={...} />
+            </GoogleMap>
+          </LoadScript >
     )
   }
 }
+```
+
+### opacity
+Use opacity prop to control overlay transparence
+
+```jsx
+<GeoTIFFOverlay overlayData={...} opacity={0.5}/>
+```
+
+### draw
+Use draw prop to contol overlay visibility (hide/show)
+
+```jsx
+<GeoTIFFOverlay overlayData={...} draw={false}/>
 ```
 
 ## License

@@ -14,7 +14,7 @@ class App extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { overlayData: null, apiKey: null, apiKeyInput: null }
+    this.state = { overlayData: null, apiKey: null, apiKeyInput: null, draw: true }
   }
 
   fetcher = async (path) => {
@@ -32,13 +32,20 @@ class App extends Component {
     await this.fetcher('welcome.tif')
   }
 
+  timer3 = async () => {
+    this.setState({ draw: false })
+  }
+
+  timer4 = async () => {
+    this.setState({ draw: true })
+  }
+
   async componentDidMount() {
 
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    const res = nextProps !== this.props || nextState.apiKey !== this.state.apiKey || nextState.overlayData !== this.state.overlayData
-    return (res)
+    return (true)
   }
 
   drawMap() {
@@ -48,7 +55,11 @@ class App extends Component {
           <Segment raised>
             <Container textAlign='center' style={{ padding: '30px' }} >
               <p>
-                Example will load 1 GeoTiff after 10 seconds, and a second one after 20 seconds
+                Example will load 1 GeoTiff after 10 seconds, and a second one after 20 seconds.
+                <br />
+                Overlay is hidden after 30 seconds.
+                <br />
+                Overlay is shown again after 40 seconds.
               </p>
             </Container>
           </Segment>
@@ -60,7 +71,7 @@ class App extends Component {
               onLoad={map => {
                 this.mapRef = map
               }}
-              id='circle-example'
+              id='example'
               mapContainerStyle={{
                 height: '768px',
                 width: '100%'
@@ -68,7 +79,7 @@ class App extends Component {
               zoom={4}
               center={{ lat: 30.397, lng: 10.644 }}
             >
-              <GeoTIFFOverlay overlayData={this.state.overlayData} draw opacity={1} />
+              <GeoTIFFOverlay overlayData={this.state.overlayData} draw={this.state.draw} opacity={1} />
             </GoogleMap>
           </LoadScript >
         </div>
@@ -91,6 +102,8 @@ class App extends Component {
   onButtonClick = () => {
     this.props.setTimeout(this.timer1, 10000)
     this.props.setTimeout(this.timer2, 20000)
+    this.props.setTimeout(this.timer3, 30000)
+    this.props.setTimeout(this.timer4, 40000)
     this.setState({ apiKey: this.state.apiKeyInput })
   }
 
